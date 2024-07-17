@@ -12,10 +12,16 @@ export class UsersService {
   }
 
   async findUsers(email: string, number?: string) {
-    await new Promise((resolve) => setTimeout(resolve, 5000));
-
-    return this.users.filter(
-      (user) => user.email === email && (!number || user.number === number),
-    );
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 5000));
+      return this.users.filter(
+        (user) =>
+          user.email.includes(email) &&
+          (!number || user.number.includes(number)),
+      );
+    } catch (error) {
+      console.error('Error during user search:', error);
+      throw error;
+    }
   }
 }
