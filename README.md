@@ -1,73 +1,115 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Backend Of User Search Application
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# Бекнд Приложения для Поиска Пользователей
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+This is a simple user search application built using NestJS and React.
+Это простое приложение для поиска пользователей, построенное с использованием NestJS и React.
 
-## Description
+It allows users to search for other users by email and phone number.
+Оно позволяет пользователям искать других пользователей по электронной почте и номеру телефона.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+It allows users to search for other users by email and phone number.
+Оно позволяет пользователям искать других пользователей по электронной почте и номеру телефона.
 
-## Installation
+## Features
 
-```bash
-$ npm install
-```
+- Search users by email and phone number.
+- Cancel ongoing search requests when a new request is made.
+- Handles connection closure and request cancellation.
 
-## Running the app
+## Возможности
 
-```bash
-# development
-$ npm run start
+- Поиск пользователей по электронной почте и номеру телефона.
+- Отмена текущих запросов при отправке нового запроса.
+- Обработка закрытия соединения и отмены запросов.
 
-# watch mode
-$ npm run start:dev
+## Tech Stack
 
-# production mode
-$ npm run start:prod
-```
+- **Backend:** NestJS, Express
+- **Frontend:** React, Ant Design
+- **Database:** JSON file (for simplicity in this demo)
+- **HTTP Client:** Axios
 
-## Test
+## Технологический Стек
 
-```bash
-# unit tests
-$ npm run test
+- **Backend:** NestJS, Express
+- **Frontend:** React, Ant Design
+- **База данных:** JSON файл (для простоты в этом демо)
+- **HTTP Клиент:** Axios
 
-# e2e tests
-$ npm run test:e2e
+## Getting Started
 
-# test coverage
-$ npm run test:cov
-```
+### Prerequisites
 
-## Support
+- Node.js (v14 or later)
+- npm or yarn
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### Installation
 
-## Stay in touch
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/NuraliAKH/3205_backend.git
+   cd 3205_backend
+   ```
+2. **Backend Setup:**
+   ```sh
+   npm install
+   ```
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+### Running the Application
 
-## License
+    ```sh
+    npm run start:dev
+    ```
 
-Nest is [MIT licensed](LICENSE).
+1. **Start the Backend Server:**
+   The backend server will start on `http://localhost:3000`.
+
+## Начало Работы
+
+### Предварительные Требования
+
+- Node.js (v14 или новее)
+- npm или yarn
+
+### Установка
+
+1.  **Клонируйте репозиторий:**
+
+    ```sh
+    git clone https://github.com/NuraliAKH/3205_backend.git
+    cd 3205_backend
+    ```
+
+2.  **Настройка Backend:**
+
+    ```sh
+    npm install
+    ```
+
+### Запуск Приложения
+
+    ```sh
+    npm run start:dev
+    ```
+
+1.  **Запустите Backend Сервер:**
+    Сервер backend запустится на `http://localhost:3000`.
+
+### Project Structure
+
+#### Backend
+
+- `src/models/users/users.controller.ts`: Defines the routes and request handling logic.
+- `src/models/users/users.service.ts`: Handles business logic and data retrieval.
+- `src/models/users/dto/search.dto.ts`: Defines the data transfer object for search queries.
+- `src/models/users/users.json`: Sample user data.
+
+### Структура Проекта
+
+#### Backend
+
+- `src/models/users/users.controller.ts`: Определяет маршруты и логику обработки запросов.
+- `src/models/users/users.service.ts`: Обрабатывает бизнес-логику и извлечение данных.
+- `src/users/dto/search.dto.ts`: Определяет объект передачи данных для поисковых запросов.
+- `src/models/users/users.json`: Пример данных пользователей.

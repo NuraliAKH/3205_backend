@@ -11,11 +11,25 @@ export class UsersService {
     this.users = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
   }
 
-  async findUsers(email: string, number?: string) {
-    await new Promise((resolve) => setTimeout(resolve, 5000));
+  async findUsers(
+    email: string,
+    number: string | undefined,
+    signal: AbortSignal,
+  ) {
+    return new Promise((resolve, reject) => {
+      const timeout = setTimeout(() => {
+        const results = this.users.filter(
+          (user) =>
+            user.email.includes(email) &&
+            (!number || user.number.includes(number)),
+        );
+        resolve(results);
+      }, 5000);
 
-    return this.users.filter(
-      (user) => user.email === email && (!number || user.number === number),
-    );
+      signal.addEventListener('abort', () => {
+        clearTimeout(timeout);
+        reject(new Error('Запрос был отменен'));
+      });
+    });
   }
 }
